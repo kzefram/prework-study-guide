@@ -7,7 +7,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Karen Bourgeois"/>
+    <meta name="description" content="I made this site as part of the Coding Boot Camp to put my notes"/>
     <title>Prework Study Guide</title>
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
 
   <body>
@@ -23,14 +26,54 @@
         <ul>
           <li>The head element contains information about the webpage.</li>
           <li>The body element represents the visible content shown to the user.</li>
-          <li>Enter your HTML notes here</li>
+          <li>These elements are nested in between open and closing tags.</li>
+          <li>HTML stands for Hyper Text Mark-up Language.</li>
+          <li>!DOCTYPE html lets the browser know what type of document it is and version.</li>
+          <li>HTML tags are like a container and everything that has to do with your website/web app.</li>
+          <li>A parent is the first level of code. The HTML tag at the top is a parent.</li>
+          <li>A child is nested inside of a parent tag. The tag 'head' is a child of HTML. <br>
+          <img src="./assets/hierarcy.png" alt="A picture of the hierarcy" style="height: 150px; width: 150px; align-self: left;"/>
+          </li>
+          <li>br puts in a line break and not all the space creating a new line does.</li>
+          <li>hr put a horizontal rule line to seperate something like paragraphs or sections.</li>
+          <li>These to examples are call self-closing tags. They do not need a second like head and p does.</li>
+          <li>Comments are useful. They are done with open bracket!--- YOUR COMMENT ---closing bracket.</li>
+          <li>Lits are done with the following tags: ul, ol, li. They are not self closing.</li>
+          <li>Blocked items will take up the whole width of the screen.</li>
+          <li>Inline only takes up the amount of room need to display the content. Other items can sit next to one another.</li>
+          <li>Inline also means the formating inside the first tag brackets. Example: style.</li>
+          <li>Meta tags live inside the 'head' tags. This is where you can define information about the file. Meta tags are useful for
+            all kinds of things especially SEO.
+          </li>
+          <li>Examples of Meta tags: Charset, Name, Content, Author.
+            <img src="./assets/metatagexample.png" alt="meta tag examples" style="height: 150px; width:  auto;"/>
+          </li>
+          <li>'Link' creates the connection to the external file.</li>
+          <li>'rel' attribute specifies the relationship between the current document and the linked document resource.</li>
+          <li>The 'href' attribute specifies the location of the external resource.</li>
         </ul>
       </section>
    
       <section class="card" id="css-section">
         <h2>CSS</h2>
           <ul>
-            <li>Enter your CSS notes here</li>
+            <li>CSS makes your site pretty.</li>
+            <li>It stands for Cascading Style Sheet.</li>
+            <li>This can be done inline, in the head tags using style tags or external.</li>
+            <li>This where you can use the classes and IDs to change certain things about your site.</li>
+            <li>A class: .CLASS_NAME, id: #ID_NAME.</li>
+            <li>The class can be used mulitple times; where the id cannot.</li>
+            <li>You can also use just the tag initials. Example: li, p, body.</li>
+            <li>Inline example: 'p style="color: red;"'.</li>
+            <li>In file example: 
+              <img src="./assets/headstyling.png" alt="a picture of an example of in file syling" style="height: 150px; width: 150px;"/>
+            </li>
+            <li>You can also play with the margins and padding to shape how your site looks.</li>
+            <li>Margin is around the outside of your content, border and padding.</li>
+            <li>Padding is directly around the content.</li>
+            <li>The following picture shows magins and padding.
+              <img src="./assets/marginsandpadding.png" alt="picture of magins and padding layout" style="height: 150px; width: auto;"/>
+            </li>
           </ul>
       </section>
    
@@ -38,8 +81,24 @@
         <h2>Git</h2>
             <ul>
               <li>git status: checks what branch we are currently on</li>
+              <li>git checkout main will change the branch to main. If you want to change it to another branch, it's done the same
+                way.
+              </li>
               <li>git checkout -b branch-name: creates a new branch and switches to it</li>
-              <li>Enter your Git notes here</li>
+              <li>git pull brings information from github.</li>
+              <li>git push sends infromation to github.</li>
+              <li>git add -A stages the file for commit.</li>
+              <li>git commit sends the file to github.</li>
+              <li>Commit is followed my -m "YOUR MESSAGE" to let others know what changes you have made.</li>
+              <li>Branches are different versions of your file to be able to compare later in case you don't like something.</li>
+              <li>Pull Requests let you tell others about changes you've pushed to a branch in a repository on github.</li>
+              <li>A repository is where all of your project's files and each file's revision history is stored. Github is a cloud based 
+                storage.
+              </li>
+              <li>Git merge will combine multiple sequences of commits into one unified history; the main branch.</li>
+              <li>git clone is what you would do to make a copy on your local machine to work on; then you commit changes when you are 
+                done.</li>
+              
             </ul>
       </section>
     
