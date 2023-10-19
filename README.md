@@ -29,6 +29,8 @@ https://github.com/users/kzefram/achievements/quickdraw
 
 https://github.com/users/kzefram/achievements/pull-shark
 
+https://github.com/users/kzefram/achievements/yolo
+
 ## Features
 
 There are three section defined; HTML, CSS, Git, JavaScript.
