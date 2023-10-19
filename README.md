@@ -6,7 +6,7 @@ This Prework Study Guide was created for boot camp students who were going throu
 
 ## Installation
 
-N/A
+There is no installation required as this is a static website.
 
 ## Usage
 
