@@ -14,7 +14,7 @@ To use this Prework Study Guide, you can review the notes in each section. For s
 
 ## Credits
 
-Karen Bourgeois
+Karen Bourgeois,
 UNB/EDx
 
 ## License
