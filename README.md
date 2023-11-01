@@ -33,7 +33,7 @@ https://github.com/users/kzefram/achievements/yolo
 
 ## Features
 
-There are three section defined; HTML, CSS, Git, JavaScript.
+There are four section defined; HTML, CSS, Git, JavaScript.
 
 ## How to Contribute
 
