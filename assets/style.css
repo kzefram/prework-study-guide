@@ -8,7 +8,7 @@ footer {
     width: 100%;
     height: 120px;
     background-color: lightblue;
-    color: white;
+    color: antiquewhite;
     
 }
 
@@ -38,6 +38,39 @@ p {
   .card {
     width: 80%;
     margin: 40px auto;
-    border: 5px solid lightcoral;
-    box-shadow: 5px 10px lightsalmon;
+    background-color: cadetblue;
+    color: antiquewhite;
+    border-radius: 30px;
+    padding: 5%;
+  }
+
+  .card:hover {
+    background-color: darkcyan;
+  }
+
+  @media screen and (max-width: 992px) {
+    header, footer {
+        background-color: coral;
+    }
+    .card {
+        background-color: salmon;
+    }
+    header {
+        padding-bottom: 45px;
+    }
+  }
+
+  @media screen and (max-width: 762px) {
+    header, footer {
+        background-color: pink;
+    }
+    .card {
+        background-color: plum;
+    }
+    header {
+        padding-bottom: 45px;
+    }
+    .card:hover {
+        background-color: powderblue;
+    }
   }
