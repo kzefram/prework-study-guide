@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Karen Bourgeois"/>
-    <meta name="description" content="I made this site as part of the Coding Boot Camp to put my notes"/>
+    <meta name="description" content="I made this site as part of the Coding BootCamp for a place to put my notes"/>
+    <meta name="keywords" content="HTML, CSS, JavaScript"/>
     <title>Prework Study Guide</title>
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
@@ -22,6 +23,7 @@
     </header>
 
     <main>
+
       <section class="card" id="command-line-section">
         <h2>Command Line</h2>
         <ul>
@@ -37,8 +39,15 @@
           <li>awk, tr, sed - Manipulate and transfrom streams of text <code>(for example: changing all the <div>s in an HTML file to    article).</code></li>
           <li>ls, ls -l -- Lists directory contents.</li>
           <li>wc - This is the word count.</li>
+          <li>git tells the computer that you are connecting wtih GitHub.</li>
+          <li>git pull is to bring the latest files from GitHub.</li>
+          <li>git push sends files to GitHub to then be merged.</li>
+          <li>git add . means to stage the files that you have made changes to.</li>
+          <li>git commit -m "Comment" gets the files ready to be sent with git push. Kind of like a save.</li>
+          <li>git status is as it says. It tells which stage you are at in working with the files.</li>
         </ul>
       </section>
+
       <section class="card" id="html-section"> 
         <h2>HTML </h2>
         <ul>
@@ -94,7 +103,6 @@
             </li>
           </ul>
       </section>
-
 
       <section class="card" id="AdvancedCSS">
         <h2>Advanced CSS</h2>
@@ -173,17 +181,40 @@
             <li>For js, a primitive is data that is not an object and has no methods or properties. There are seven typese: string, number, bigint, boolean, undefined, symbol, null.</li>
             <li>All primitives are immutable; they cannot be altered. Some cufusion can happen. Priitive itself vs a variable assigned a primitive value.</li>
             <li>Primitives have no methods, however, behave as if they do.</li>
-
-
-            
+            <li>Scripts are linked at the bottom and this is because you want to load the HTML & CSS to sure all the buttons are in the right place so the JS can funtion properly.</li>
+            <li>Operator: </li>
+              <ul>
+                <li>!== means not equal to</li>
+                <li>&& means 'and', both espressions have to be true or vice versa.</li>
+                <li>|| means 'or', example: if one of the varables is true then the answer is true</li>
+                <li>'Pipes' are found on the keyboard, sometimes over the backslash.</li>
+                <li>console.log(!Expression2); means not equal to.</li>
+              </ul>
+            <li>Expressions can be stored in a variable: example: expression1 = <code>(1!<0)</code></li>
+            <li>if... else if... else... are used to create conditional statements. Example:</li>
+            <li>It means if the variable is equal to 12, then it will print the phrase to the console, other wise, it will print the other phrase.</li>
+              <pre>
+                <code>
+                  if (lunch === 12) {
+                    console.log("Yay! I'm starving!");
+                  }
+                  else {
+                    console.log("ah! man! It isn't lunch yet.");
+                  }
+                </code>
+              </pre>
+            <li>Switch is also used here like in C# and works the same way. Default is the same as else.</li>
           </ul>
       </section>
+
     </main>
+
     <footer>
       <br/><br/>
       <p>I can code!</p>
       <h6>&copy; Copyright 2023 Karen Bourgeois</h6>
     </footer>
+
     <script src="./assets/script.js"></script>
 
   </body>

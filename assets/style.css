@@ -52,6 +52,10 @@ p {
     background-color: darkcyan;
   }
 
+  #img4 {
+    height: 75px;
+  }
+
   @media screen and (max-width: 992px) {
     header, footer {
         background-color: coral;

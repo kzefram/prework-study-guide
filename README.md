@@ -2,7 +2,7 @@
 
 ## Description
 
-This Prework Study Guide was created for boot camp students who were going through the Prework. It contains notes on HTML, CSS, Git, and JavaScript.
+This Prework Study Guide was created for bootcamp students who were going through the Prework before starting actual classes. It contains my notes on HTML, CSS, Advanced CSS, Git, and JavaScript.
 
 ## Installation
 
@@ -41,7 +41,7 @@ https://github.com/users/kzefram/achievements/yolo
 
 ## Features
 
-There are four section defined; HTML, CSS, Git, JavaScript.
+There are five section defined; HTML, CSS, Advanced CSS, Git, JavaScript.
 
 ## How to Contribute
 
