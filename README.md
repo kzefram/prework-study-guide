@@ -54,7 +54,7 @@ https://github.com/users/kzefram/achievements/yolo
 
 ## Features
 
-There are five section defined; HTML, CSS, Advanced CSS, Git, JavaScript.
+There are several sections defined; HTML, CSS, Advanced CSS, Git, JavaScript and so much more.
 
 ## How to Contribute
 
@@ -62,7 +62,7 @@ I would appreciate any insight to making it more functional and pretty. I'm also
 
 ## Tests
 
-- Making sure links work -
+- Making sure links work
 - Open your browser of choice,
 - Click the link,
 - Does it take you to where it says?
