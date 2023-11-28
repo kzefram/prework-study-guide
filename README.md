@@ -4,6 +4,18 @@
 
 This Prework Study Guide was created for bootcamp students who were going through the Prework before starting actual classes. It contains my notes on HTML, CSS, Advanced CSS, Git, and JavaScript.
 
+User Story
+
+- As a bootcamp student
+- I want the prework notes to be structured on a webpage
+- so that I can easily find and read information
+
+Acceptance Criteria
+
+- GIVEN a Prework Study Guide website
+- WHEN I visit the website in my browswer
+- THEN I see the boxes titled with the information accociated with the notes
+
 ## Installation
 
 There is no installation required as this is a static website.
@@ -23,7 +35,8 @@ To use this Prework Study Guide, you can review the notes in each section. For s
 
 - Karen Bourgeois,
 - UNB/EDx,
-- https://developer.mozilla.org/en-US/
+- https://developer.mozilla.org/en-US/,
+- https://www.joshwcomeau.com/css/custom-css-reset/
 
 ## License
 
