@@ -65,7 +65,7 @@ p {
     height: 75px;
   }
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 900px) {
     header, footer {
         background-color: coral;
     }
@@ -75,15 +75,28 @@ p {
     header {
         padding-bottom: 45px;
     }
+
+    img {
+      height: 30%;
+      width: auto;
+    }
+
+    .title {
+      font-size: 50px;
+    }
+
+    .sub-title {
+      font-size: 25px;
+    }
   }
 
-  @media screen and (max-width: 762px) {
+  @media screen and (max-width: 780px) {
     header, footer {
         background-color: pink;
     }
 
     .title {
-      font-size: 100%;
+      font-size: 50px;
     }
 
     .sub-title {
@@ -98,5 +111,15 @@ p {
     }
     .card:hover {
         background-color: powderblue;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .title {
+      font-size: 20px;
+    }
+
+    .sub-title {
+      font-size: 15px;
     }
   }
