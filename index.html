@@ -1,226 +1,814 @@
 <!DOCTYPE html>
 
-
-<html lang="en"> 
-
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Karen Bourgeois"/>
-    <meta name="description" content="I made this site as part of the Coding BootCamp for a place to put my notes"/>
-    <meta name="keywords" content="HTML, CSS, JavaScript"/>
+    <meta name="author" content="Karen Bourgeois" />
+    <meta
+      name="description"
+      content="I made this site as part of the Coding BootCamp for a place to put my notes"
+    />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
     <title>Prework Study Guide</title>
     <link rel="stylesheet" href="./assets/style.css" />
-    <link rel="stylesheet" href="./assets/reset.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom Styles */
+      body {
+        font-family: "Inter", sans-serif;
+        /* Responsive background color transitions */
+        background-color: #f3f4f6; /* Light gray for mobile */
+        transition: background-color 0.5s ease;
+      }
+
+      @media (min-width: 768px) {
+        body {
+          background-color: #e0e7ff; /* Light indigo for tablets */
+        }
+      }
+
+      @media (min-width: 1024px) {
+        body {
+          background-color: #d1fae5; /* Light green for desktops */
+        }
+      }
+
+      .card-icon {
+        transition: transform 0.3s ease;
+      }
+      .card:hover .card-icon {
+        transform: scale(1.1);
+      }
+    </style>
   </head>
 
-  <body>
-
-    <header id="top">
-      <h1 class="title">Prework Study Guide</h1>
-      <img src="./assets/bowtie-cat.png" alt="Profile image of cat wearing a bow tie."/>
-      <h2 class="sub-title">✨ Open the Console to See What's Happening ✨</h2>
+  <body class="text-gray-800 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="text-2xl font-bold text-indigo-600">DevGuide</a>
+        <div class="hidden md:flex space-x-6 items-center">
+          <a href="#home" class="text-gray-600 hover:text-indigo-600 transition"
+            >Home</a
+          >
+          <a href="#html" class="text-gray-600 hover:text-indigo-600 transition"
+            >HTML</a
+          >
+          <a href="#css" class="text-gray-600 hover:text-indigo-600 transition"
+            >CSS</a
+          >
+          <a
+            href="#javascript"
+            class="text-gray-600 hover:text-indigo-600 transition"
+            >JavaScript</a
+          >
+          <a href="#git" class="text-gray-600 hover:text-indigo-600 transition"
+            >Git/GitHub</a
+          >
+          <a
+            href="#resources"
+            class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition"
+            >Resources</a
+          >
+        </div>
+        <button id="mobile-menu-button" class="md:hidden">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+        <a href="#home" class="block py-2 text-gray-600 hover:text-indigo-600"
+          >Home</a
+        >
+        <a href="#html" class="block py-2 text-gray-600 hover:text-indigo-600"
+          >HTML</a
+        >
+        <a href="#css" class="block py-2 text-gray-600 hover:text-indigo-600"
+          >CSS</a
+        >
+        <a
+          href="#javascript"
+          class="block py-2 text-gray-600 hover:text-indigo-600"
+          >JavaScript</a
+        >
+        <a href="#git" class="block py-2 text-gray-600 hover:text-indigo-600"
+          >Git/GitHub</a
+        >
+        <a
+          href="#resources"
+          class="block py-2 text-gray-600 hover:text-indigo-600"
+          >Resources</a
+        >
+      </div>
     </header>
 
-    <main>
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 flex-grow">
+      <!-- Home Section / Hero -->
+      <section id="home" class="text-center mb-20">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Your Web Development Journey Starts Here
+        </h1>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+          This guide contains curated notes and resources on fundamental web
+          technologies. Select a topic below to start learning.
+        </p>
+        <br /><br />
 
-      <section class="card" id="command-line-section">
-        <h2>Command Line</h2>
-        <ul>
-          <li>cd & cd .. - This is for moving around the file systems. Example: cd Name or cd .. to go back.</li>
-          <li>mkdir - This is for creating directories. Example: mkdir NameOfDirectory.</li>
-          <li>touch - Creates files and modifies metadata.</li>
-          <li>cp - Copies files.</li>
-          <li>mv - Moving files.</li>
-          <li>rm - Removes/deletes directories</li>
-          <li>curl - Download files found at specific URLs.</li>
-          <li>grep - Search for fragments of text inside larger bodies of text.</li>
-          <li>less, cat - View a file's contents page by page.</li>
-          <li>awk, tr, sed - Manipulate and transfrom streams of text <code>(for example: changing all the <div>s in an HTML file to    article).</code></li>
-          <li>ls, ls -l -- Lists directory contents.</li>
-          <li>wc - This is the word count.</li>
-          <li>git tells the computer that you are connecting wtih GitHub.</li>
-          <li>git pull is to bring the latest files from GitHub.</li>
-          <li>git push sends files to GitHub to then be merged.</li>
-          <li>git add . means to stage the files that you have made changes to.</li>
-          <li>git commit -m "Comment" gets the files ready to be sent with git push. Kind of like a save.</li>
-          <li>git status is as it says. It tells which stage you are at in working with the files.</li>
-        </ul>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- HTML Card -->
+          <a
+            href="#html"
+            class="card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center"
+          >
+            <div class="card-icon w-20 h-20 mx-auto mb-4 text-orange-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-full h-full"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">HTML</h3>
+            <p class="text-gray-600">
+              The structure and skeleton of your webpage.
+            </p>
+          </a>
+          <!-- CSS Card -->
+          <a
+            href="#css"
+            class="card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center"
+          >
+            <div class="card-icon w-20 h-20 mx-auto mb-4 text-blue-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-full h-full"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.553L16.5 21.75l-.398-1.197a3.375 3.375 0 00-2.455-2.455L12.75 18l1.197-.398a3.375 3.375 0 002.455-2.455L16.5 14.25l.398 1.197a3.375 3.375 0 002.455 2.455L20.25 18l-1.197.398a3.375 3.375 0 00-2.455 2.455z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">CSS</h3>
+            <p class="text-gray-600">
+              Styling and decorating your content for design.
+            </p>
+          </a>
+          <!-- JavaScript Card -->
+          <a
+            href="#javascript"
+            class="card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center"
+          >
+            <div class="card-icon w-20 h-20 mx-auto mb-4 text-yellow-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-full h-full"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">JavaScript</h3>
+            <p class="text-gray-600">
+              Adding interactivity and logic to your site.
+            </p>
+          </a>
+          <!-- Git/GitHub Card -->
+          <a
+            href="#git"
+            class="card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center"
+          >
+            <div class="card-icon w-20 h-20 mx-auto mb-4 text-gray-800">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-full h-full"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.25 6.75c0 .621-.504 1.125-1.125 1.125S15 7.371 15 6.75s.504-1.125 1.125-1.125S17.25 6.129 17.25 6.75zM9 12a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0 0h6m-6 0h-1.5m1.5 0v-1.5m0 1.5v1.5m6-1.5v-1.5m0 1.5v1.5m-6-1.5h-1.5m1.5 0h6.75m-6.75 0h-1.5m1.5 0v-1.5m0 1.5v1.5m6-1.5v-1.5m0 1.5v1.5M9 12l-3 3m0 0l3-3m-3 3v-3m0 3h3m-3 0l3 3m0-3l-3-3m3 3h3m6 0l-3-3m0 0l3-3m-3 3V9m0 3h-3m3 0l-3 3m0-3l3-3m-3 3h-3m-1.5 1.5l-3-3m0 0l3-3m-3 3h3m-3 0V9m0 3h3"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Git/GitHub</h3>
+            <p class="text-gray-600">
+              Version control and collaboration workflow.
+            </p>
+          </a>
+        </div>
       </section>
 
-      <section class="card" id="html-section"> 
-        <h2>HTML </h2>
-        <ul>
-          <li>The head element contains information about the webpage.</li>
-          <li>The body element represents the visible content shown to the user.</li>
-          <li>These elements are nested in between open and closing tags.</li>
-          <li>HTML stands for Hyper Text Mark-up Language.</li>
-          <li>!DOCTYPE html lets the browser know what type of document it is and version.</li>
-          <li>HTML tags are like a container and everything that has to do with your website/web app.</li>
-          <li>A parent is the first level of code. The HTML tag at the top is a parent.</li>
-          <li>A child is nested inside of a parent tag. The tag 'head' is a child of HTML. <br>
-          <img src="./assets/hierarcy.png" alt="A picture of the hierarcy" id= "img2"/>
-          </li>
-          <li>br puts in a line break and not all the space creating a new line does.</li>
-          <li>hr put a horizontal rule line to seperate something like paragraphs or sections.</li>
-          <li>These to examples are call self-closing tags. They do not need a second like head and p does.</li>
-          <li>Comments are useful. They are done with open bracket!--- YOUR COMMENT ---closing bracket.</li>
-          <li>Lits are done with the following tags: ul, ol, li. They are not self closing.</li>
-          <li>Blocked items will take up the whole width of the screen.</li>
-          <li>Inline only takes up the amount of room need to display the content. Other items can sit next to one another.</li>
-          <li>Inline also means the formating inside the first tag brackets. Example: style.</li>
-          <li>Meta tags live inside the 'head' tags. This is where you can define information about the file. Meta tags are useful for
-            all kinds of things especially SEO.
-          </li>
-          <li>Examples of Meta tags: Charset, Name, Content, Author.
-            <img src="./assets/metatagexample.png" alt="meta tag examples" id="img3"/>
-          </li>
-          <li>'Link' creates the connection to the external file.</li>
-          <li>'rel' attribute specifies the relationship between the current document and the linked document resource.</li>
-          <li>The 'href' attribute specifies the location of the external resource.</li>
-        </ul>
-      </section>
-   
-      <section class="card" id="css-section">
-        <h2>CSS</h2>
-          <ul>
-            <li>CSS makes your site pretty.</li>
-            <li>It stands for Cascading Style Sheet.</li>
-            <li>This can be done inline, in the head tags using style tags or external.</li>
-            <li>This where you can use the classes and IDs to change certain things about your site.</li>
-            <li>A class: .CLASS_NAME, id: #ID_NAME.</li>
-            <li>The class can be used mulitple times; where the id cannot.</li>
-            <li>You can also use just the tag initials. Example: li, p, body.</li>
-            <li>Inline example: 'p style="color: red;"'.</li>
-            <li>In file example: 
-              <img src="./assets/headstyling.png" alt="a picture of an example of in file syling" id="img4"/>
-            </li>
-            <li>You can also play with the margins and padding to shape how your site looks.</li>
-            <li>Margin is around the outside of your content, border and padding.</li>
-            <li>Padding is directly around the content.</li>
-            <li>The following picture shows magins and padding.
-              <img src="./assets/marginsandpadding.png" alt="picture of magins and padding layout" id="img5"/>
-            </li>
-          </ul>
-      </section>
+      <!-- Topic Sections -->
+      <div class="space-y-16">
+        <section
+          id="html"
+          class="bg-white p-8 rounded-lg shadow-md scroll-mt-24 hidden"
+        >
+          <h2 class="text-3xl font-bold mb-6 border-b pb-4">
+            HTML: HyperText Markup Language
+          </h2>
+          <div class="prose max-w-none">
+            <p>
+              HTML is the backbone of any website. It provides the fundamental
+              structure for all the content that appears on a webpage, defining
+              everything from paragraphs and headings to images and forms.
+            </p>
 
-      <section class="card" id="AdvancedCSS">
-        <h2>Advanced CSS</h2>
-        <ul>
-          <li>@media - Media Queries</li>
-          <li>These allow you to do some cool things with your site.</li>
-          <li>An example: Changing the colour when the screen get to a certain size; labtop vs tablet vs phone.</li>
-        </ul>
-      </section>
-   
-      <section class="card" id="git-section">
-        <h2>Git</h2>
+            <h4 class="font-bold mt-4">Core Concepts:</h4>
             <ul>
-              <li>git status: checks what branch we are currently on</li>
-              <li>git checkout main will change the branch to main. If you want to change it to another branch, it's done the same
-                way.
+              <li>
+                <b>Elements and Tags:</b> HTML consists of elements, which are
+                defined by start and end tags. For example,
+                <code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code>. Some
+                elements, like <code>&lt;br&gt;</code> or
+                <code>&lt;img&gt;</code>, are self-closing.
               </li>
-              <li>git checkout -b branch-name: creates a new branch and switches to it</li>
-              <li>git pull brings information from github.</li>
-              <li>git push sends infromation to github.</li>
-              <li>git add -A stages the file for commit.</li>
-              <li>git commit sends the file to github.</li>
-              <li>Commit is followed my -m "YOUR MESSAGE" to let others know what changes you have made.</li>
-              <li>Branches are different versions of your file to be able to compare later in case you don't like something.</li>
-              <li>Pull Requests let you tell others about changes you've pushed to a branch in a repository on github.</li>
-              <li>A repository is where all of your project's files and each file's revision history is stored. Github is a cloud based 
-                storage.
+              <li>
+                <b>Attributes:</b> Provide additional information about an
+                element and are always specified in the start tag. For example,
+                in <code>&lt;a href="https://example.com"&gt;</code>,
+                <code>href</code> is an attribute.
               </li>
-              <li>Git merge will combine multiple sequences of commits into one unified history; the main branch.</li>
-              <li>git clone is what you would do to make a copy on your local machine to work on; then you commit changes when you are 
-                done.</li>
-              <li>You can use Git Pages to deploy your projects.</li>
-              <li>Deployment is when your projects are live and avaiable to the public.</li>
-              <li>More about GitHub pages <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">Click Here</a> </li>
-              <li>It is not intended for business and must put a disclaimer that your site is just for educational purposes.</li>
-              <li>Zero sexual content.</li>
-              <li>More on Creating GitHub Pages <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site"></a></li>
+              <li>
+                <b>Document Structure:</b> Every HTML file has a basic
+                structure: <code>&lt;!DOCTYPE html&gt;</code>,
+                <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and
+                <code>&lt;body&gt;</code>.
+                <ul>
+                  <li>
+                    The <code>&lt;head&gt;</code> contains meta-information like
+                    the page title (<code>&lt;title&gt;</code>) and links to
+                    stylesheets.
+                  </li>
+                  <li>
+                    The <code>&lt;body&gt;</code> contains the visible content
+                    shown to the user.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Semantic HTML:</b> Using tags that describe the content's
+                meaning (like <code>&lt;article&gt;</code>,
+                <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>) improves
+                accessibility for screen readers and search engine optimization
+                (SEO).
+              </li>
+              <li>
+                <b>Block vs. Inline Elements:</b> Block elements (like
+                <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>) start on a new
+                line and take up the full width available. Inline elements (like
+                <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>) do not start
+                on a new line and only take up as much width as necessary.
+              </li>
             </ul>
-      </section>
-    
-      <section class="card" id="javascript-section">
-        <h2>JavaScript</h2>
-          <ul>
-            <li>JavaScript makes your site: HTML(set-up), CSS(decorating), JavaScript(dancing).</li>
-            <li>Don't forget those blinking semicolons!!</li>
-            <li>JavaScript links should be in the body at the very end.</li>
-            <li>The 'sript' link has to be at the bottom just before the end because if it loads before your HTML that is suppose to be effected by that code, then there could be issues loading or performing that task.</li>
-            <li>addEventListener() function is if you need something to happen like a click.</li>
-            <li>querySelector() is like when you call a tag in CSS.</li>
-            <li>alert() creates a pop-up.</li>
-            <li>const is constant like in C#. They are imutable which means they cannot be changed.</li>
-            <li>Variables are like any language; a container. They  are a place to store data until it is needed. <br/>
-            Syntax<br/>
-            - var name1;  (undefined)<br/>
-            - var name1 = value1;  (declared)<br/>
-            - var name1 = value1, name2 = value2;<br/>
-            </li>
-            <li>A triple = sign tells the computer to return a boolean if the two variables are equal. This is a comparison operator</li>
-            <li>To set an image, you use the setAttribute() function with attributes; example: src, image adddress in quotes.</li>
-            <li>A place to go for more information: <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics#comments">Click Here</a></li>
-            <li>Function are like in C# and Python and do the same thing. So learn one and the rest come easier. You can recall them over and over without rewriting all that code over and over.</li>
-            <li>The 'let' function intializes the variable.</li>
-            <li>There are also the if/else statements that work the same. And use curly brackets like C#.</li>
-            <li>Comments for a multiple lines are done /* ending with */</li>
-            <li>Comments for a single line is is //.</li>
-            <li>A 'for' loop contiues to loop until the it has reached the goal and does this so you don't have to write all those lines of code</li>
-            <li>You need to put the data type to make a variable. example: var me = "Karen";</li>
-            <li>To intialize a variable, you need to use the word set. </li>
-            <li>If statements are similar to C#.
-              <img src="./assets/ifstatement.png" alt="a picture of an example of in file syling" id="img6"/>
-            </li>
-            <li>control flow is the order in which a computer executes code in a script.</li>
-            <li>Making a function - the word function and then the name, code block with the instructions, then call the function.</li>
-            <li>Fuction is a set of instructions that can be called upon many times without having to write out the same code many times.</li>
-            <li>Like CSS, it is easier to make a seperate file. Example: JavaScript.js</li>
-            <li>For js, a primitive is data that is not an object and has no methods or properties. There are seven typese: string, number, bigint, boolean, undefined, symbol, null.</li>
-            <li>All primitives are immutable; they cannot be altered. Some cufusion can happen. Priitive itself vs a variable assigned a primitive value.</li>
-            <li>Primitives have no methods, however, behave as if they do.</li>
-            <li>Scripts are linked at the bottom and this is because you want to load the HTML & CSS to sure all the buttons are in the right place so the JS can funtion properly.</li>
-            <li>Operator: </li>
-              <ul>
-                <li>!== means not equal to</li>
-                <li>&& means 'and', both espressions have to be true or vice versa.</li>
-                <li>|| means 'or', example: if one of the varables is true then the answer is true</li>
-                <li>'Pipes' are found on the keyboard, sometimes over the backslash.</li>
-                <li>console.log(!Expression2); means not equal to.</li>
-              </ul>
-            <li>Expressions can be stored in a variable: example: expression1 = <code>(1!<0)</code></li>
-            <li>if... else if... else... are used to create conditional statements. Example:</li>
-            <li>It means if the variable is equal to 12, then it will print the phrase to the console, other wise, it will print the other phrase.</li>
-              <pre>
-                <code>
-                  if (lunch === 12) {
-                    console.log("Yay! I'm starving!");
-                  }
-                  else {
-                    console.log("ah! man! It isn't lunch yet.");
-                  }
-                </code>
-              </pre>
-            <li>Switch is also used here like in C# and works the same way. Default is the same as else.</li>
-          </ul>
-      </section>
 
+            <h4 class="font-bold mt-4">Commonly Used Tags:</h4>
+            <ul>
+              <li>
+                <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> for headings.
+              </li>
+              <li><code>&lt;p&gt;</code> for paragraphs.</li>
+              <li><code>&lt;a href="..."&gt;</code> for links.</li>
+              <li>
+                <code>&lt;img src="..." alt="..."&gt;</code> for images. The
+                <code>alt</code> attribute is crucial for accessibility.
+              </li>
+              <li>
+                <code>&lt;ul&gt;</code> (unordered list) and
+                <code>&lt;ol&gt;</code> (ordered list), with list items defined
+                by <code>&lt;li&gt;</code>.
+              </li>
+              <li>
+                <code>&lt;div&gt;</code> a generic container for flow content,
+                often used for styling purposes with CSS.
+              </li>
+              <li>
+                <code>&lt;span&gt;</code> a generic inline container, often used
+                to style a part of a text.
+              </li>
+            </ul>
+
+            <h4 class="font-bold mt-4">HTML Forms</h4>
+            <p>
+              Forms are used to collect user input. They are a crucial part of
+              interactive websites.
+            </p>
+            <ul>
+              <li>
+                The <code>&lt;form&gt;</code> element is the container for all
+                form inputs.
+              </li>
+              <li>
+                <code>&lt;label&gt;</code> defines a label for an input element,
+                which improves accessibility.
+              </li>
+              <li>
+                <code>&lt;input type="..."&gt;</code> is the most versatile form
+                element. The <code>type</code> attribute can be
+                <code>text</code>, <code>password</code>, <code>email</code>,
+                <code>checkbox</code>, <code>radio</code>, <code>submit</code>,
+                and more.
+              </li>
+              <li>
+                <code>&lt;textarea&gt;</code> defines a multi-line text input
+                field.
+              </li>
+              <li><code>&lt;button&gt;</code> defines a clickable button.</li>
+            </ul>
+            <pre><code class="language-html">&lt;form&gt;
+  &lt;label for="username"&gt;Username:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="text" id="username" name="username"&gt;&lt;br&gt;
+  &lt;label for="password"&gt;Password:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="password" id="password" name="password"&gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre>
+
+            <h4 class="font-bold mt-4">HTML Entities</h4>
+            <p>
+              Some characters are reserved in HTML. To display them, you must
+              use character entities. This is also useful for displaying
+              invisible characters or characters not on your keyboard.
+            </p>
+            <ul>
+              <li>
+                <code>&amp;lt;</code> for the less than sign (<code>&lt;</code>)
+              </li>
+              <li>
+                <code>&amp;gt;</code> for the greater than sign
+                (<code>&gt;</code>)
+              </li>
+              <li>
+                <code>&amp;amp;</code> for the ampersand sign
+                (<code>&amp;</code>)
+              </li>
+              <li>
+                <code>&amp;quot;</code> for double quotes (<code>"</code>)
+              </li>
+              <li><code>&amp;copy;</code> for the copyright symbol (©)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id="css"
+          class="bg-white p-8 rounded-lg shadow-md scroll-mt-24 hidden"
+        >
+          <h2 class="text-3xl font-bold mb-6 border-b pb-4">
+            CSS: Cascading Style Sheets
+          </h2>
+          <div class="prose max-w-none">
+            <p>
+              CSS is used to style and layout web pages. It controls everything
+              from fonts and colors to animations and responsive design,
+              allowing you to create visually appealing and user-friendly
+              websites.
+            </p>
+
+            <h4 class="font-bold mt-4">Applying CSS:</h4>
+            <ul>
+              <li>
+                <b>External Stylesheet:</b> The best practice. A
+                <code>.css</code> file is linked in the HTML
+                <code>&lt;head&gt;</code> with
+                <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.
+                This keeps your styles separate from your content.
+              </li>
+              <li>
+                <b>Internal Stylesheet:</b> CSS rules are placed inside a
+                <code>&lt;style&gt;</code> tag within the HTML
+                <code>&lt;head&gt;</code>. Useful for single-page styling.
+              </li>
+              <li>
+                <b>Inline Styles:</b> CSS rules are applied directly to an HTML
+                element using the <code>style</code> attribute (e.g.,
+                <code>&lt;p style="color: red;"&gt;</code>). This is generally
+                avoided as it's hard to maintain.
+              </li>
+            </ul>
+
+            <h4 class="font-bold mt-4">Selectors and Properties:</h4>
+            <ul>
+              <li>
+                <b>Selectors:</b> Target the HTML elements you want to style.
+                You can select by tag name (<code>p</code>), class
+                (<code>.my-class</code>), ID (<code>#my-id</code>), attributes
+                (<code>[type="submit"]</code>), and pseudo-classes
+                (<code>a:hover</code>).
+              </li>
+              <li>
+                <b>Properties and Values:</b> You apply styles with
+                property-value pairs inside curly braces, like
+                <code>p { color: blue; font-size: 16px; }</code>.
+              </li>
+            </ul>
+
+            <h4 class="font-bold mt-4">The Box Model</h4>
+            <p>
+              Every HTML element is a box. The CSS box model is a set of rules
+              for how the size and spacing of these boxes are calculated. It
+              consists of four parts:
+            </p>
+
+            <ul>
+              <li>
+                <b>Content:</b> The text, image, or other media in the element.
+              </li>
+              <li>
+                <b>Padding:</b> The transparent space between the content and
+                the border.
+              </li>
+              <li>
+                <b>Border:</b> A line that goes around the padding and content.
+              </li>
+              <li>
+                <b>Margin:</b> The transparent space around the outside of the
+                border, separating it from other elements.
+              </li>
+            </ul>
+
+            <h4 class="font-bold mt-4">Modern Layouts:</h4>
+            <ul>
+              <li>
+                <b>Flexbox:</b> A one-dimensional layout model perfect for
+                arranging items in a row or a column. It provides powerful
+                alignment and spacing capabilities.
+              </li>
+              <li>
+                <b>Grid:</b> A two-dimensional layout model for creating complex
+                grid-based layouts with rows and columns. It's ideal for overall
+                page layouts.
+              </li>
+            </ul>
+
+            <h4 class="font-bold mt-4">Responsive Design with Media Queries</h4>
+            <p>
+              Media Queries are the key to responsive design. They allow you to
+              apply different CSS styles based on device characteristics, most
+              commonly the viewport width. This ensures your site looks great on
+              desktops, tablets, and phones.
+            </p>
+            <pre><code class="language-css">/* Base style for the body background */
+body {
+  background-color: lightblue;
+}
+
+/* Change background to lightgreen on screens 768px wide or wider */
+@media (min-width: 768px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+/* Change background to lightpink on screens 1024px wide or wider */
+@media (min-width: 1024px) {
+  body {
+    background-color: lightpink;
+  }
+}</code></pre>
+
+            <h4 class="font-bold mt-4">Specificity</h4>
+            <p>
+              Specificity is how browsers decide which CSS rule to apply when
+              multiple rules target the same element. The more specific a
+              selector is, the more weight it has. The general hierarchy is:
+            </p>
+            <ol>
+              <li>Inline styles (highest specificity)</li>
+              <li>IDs (e.g., <code>#main-nav</code>)</li>
+              <li>
+                Classes, pseudo-classes, attribute selectors (e.g.,
+                <code>.btn</code>, <code>:hover</code>,
+                <code>[type="text"]</code>)
+              </li>
+              <li>
+                Element selectors (e.g., <code>p</code>, <code>div</code>)
+                (lowest specificity)
+              </li>
+            </ol>
+
+            <h4 class="font-bold mt-4">Transitions</h4>
+            <p>
+              CSS transitions allow you to smoothly change property values over
+              a given duration. This can create simple, pleasing animations
+              without needing JavaScript.
+            </p>
+            <pre><code class="language-css">.button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.button:hover {
+  background-color: darkblue; /* This change will be animated */
+}</code></pre>
+          </div>
+        </section>
+
+         <section id="javascript" class="bg-white p-8 rounded-lg shadow-md scroll-mt-24 hidden">
+                <h2 class="text-3xl font-bold mb-6 border-b pb-4">JavaScript: The Language of the Web</h2>
+                <div class="prose max-w-none">
+                    <p>JavaScript (JS) is a programming language that allows you to implement complex features on web pages. It brings interactivity to your site, making it dynamic and engaging by responding to user actions, fetching data, and much more.</p>
+
+                    <h4 class="font-bold mt-4">Core Concepts:</h4>
+                    <ul>
+                        <li><b>Variables:</b> Containers for storing data values. Declared with <code>let</code> (for values that can change), <code>const</code> (for constant values that cannot be reassigned), and <code>var</code> (the older way, generally avoided).</li>
+                        <li><b>Data Types:</b> JavaScript has several primitive types: String, Number, Boolean, Null, Undefined. It also has Objects and Arrays.</li>
+                        <li><b>Operators:</b> Symbols used to perform operations on variables and values. Includes arithmetic (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>), assignment (<code>=</code>), comparison (<code>==</code>, <code>===</code>, <code>!=</code>, <code>!==</code>, <code>&gt;</code>, <code>&lt;</code>), and logical (<code>&amp;&amp;</code> AND, <code>||</code> OR, <code>!</code> NOT). The triple equals <code>===</code> is a strict equality check that also compares the data type.</li>
+                        <li><b>Functions:</b> A block of code designed to perform a particular task. A function is executed when it is "called" or "invoked". They are fundamental building blocks in JS.</li>
+                        <li><b>Control Flow:</b> The order in which the computer executes statements. You can control this with conditional statements (<code>if...else</code>) and loops (<code>for</code>, <code>while</code>).</li>
+                    </ul>
+                    <pre><code class="language-javascript">// Example of a for loop
+for (let i = 0; i < 5; i++) {
+  console.log("The number is " + i);
+}</code></pre>
+
+                    <h4 class="font-bold mt-4">DOM Manipulation:</h4>
+                    <p>The <b>Document Object Model (DOM)</b> is a programming interface for web documents. It represents the page as a tree of objects, allowing JavaScript to change the document structure, style, and content.</p>
+                    <ul>
+                        <li><b>Selecting Elements:</b> You can grab elements from the page using methods like <code>document.querySelector('.my-class')</code>, <code>document.getElementById('my-id')</code>, or <code>document.querySelectorAll('p')</code> to get multiple elements.</li>
+                        <li><b>Changing Content:</b> Once an element is selected, you can change its text with <code>.textContent</code> or its HTML content with <code>.innerHTML</code>.</li>
+                        <li><b>Changing Styles:</b> You can manipulate CSS properties directly via the <code>.style</code> property (e.g., <code>element.style.color = 'blue';</code>).</li>
+                        <li><b>Event Handling:</b> You can make a page interactive by listening for events (like clicks, key presses, or mouse movements) and running code in response. Use <code>.addEventListener('click', functionName)</code> to attach an event listener to an element.</li>
+                    </ul>
+                    <pre><code class="language-javascript">// To see this work, you would need an HTML button with id="myButton"
+// and an h1 element in your HTML file.
+const myButton = document.getElementById('myButton');
+const myHeading = document.querySelector('h1');
+
+if (myButton && myHeading) {
+    myButton.addEventListener('click', () => {
+      myHeading.textContent = 'You clicked the button!';
+      myHeading.style.color = 'purple';
+    });
+}
+</code></pre>
+                    
+                    <h4 class="font-bold mt-4">Arrays and Objects</h4>
+                    <ul>
+                        <li><b>Arrays:</b> A special type of variable that can hold more than one value at a time, stored in a list-like structure. <code>let colors = ['red', 'green', 'blue'];</code></li>
+                        <li><b>Objects:</b> Collections of key-value pairs. They are used to group related data and functionality.
+                        <pre><code class="language-javascript">const user = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30
+};
+// Access data using dot notation:
+console.log(user.firstName); // Outputs "John"</code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+          <section id="git" class="bg-white p-8 rounded-lg shadow-md scroll-mt-24 hidden">
+                <h2 class="text-3xl font-bold mb-6 border-b pb-4">Git & GitHub: Version Control</h2>
+                <div class="prose max-w-none">
+                    <p><b>Git</b> is a distributed version control system that tracks changes to your code on your local machine. It allows you to save "snapshots" of your project over time. <b>GitHub</b> is a cloud-based hosting service that lets you manage and store your Git repositories online. Together, they are essential for collaboration, project management, and backing up your work.</p>
+                
+                    <h4 class="font-bold mt-4">The Basic Workflow:</h4>
+                    <ol>
+                        <li><b>Modify Files:</b> Make changes to your project files in your code editor.</li>
+                        <li><b>Stage Changes:</b> Choose which changes you want to include in the next commit with <code>git add [file-name]</code> or <code>git add .</code> to stage all changes. Staging lets you craft precise commits.</li>
+                        <li><b>Commit Changes:</b> Save your staged changes to the project's local history with <code>git commit -m "Your descriptive message"</code>. A commit is a permanent snapshot of your staged files.</li>
+                        <li><b>Push to Remote:</b> Upload your local commits to a remote repository on GitHub with <code>git push</code>. This shares your work and serves as a backup.</li>
+                        <li><b>Pull from Remote:</b> Download the latest changes from a remote repository with <code>git pull</code>. This is crucial to do before starting new work in a collaborative project to avoid conflicts.</li>
+                    </ol>
+
+                    <h4 class="font-bold mt-4">Branching and Merging</h4>
+                    <p>Branching is a core concept in Git. It allows you to create an independent line of development to work on a new feature or bug fix without affecting the main codebase (often called the `main` or `master` branch). Once your work is complete, you can merge your branch back into the main branch.</p>
+                    <ul>
+                        <li><code>git branch [branch-name]</code>: Creates a new branch.</li>
+                        <li><code>git checkout [branch-name]</code>: Switches to the specified branch. (You can combine these with <code>git checkout -b [new-branch-name]</code>).</li>
+                        <li><code>git merge [branch-name]</code>: Combines the history of the specified branch into your current branch.</li>
+                    </ul>
+
+                    <h4 class="font-bold mt-4">Pull Requests (GitHub)</h4>
+                    <p>A Pull Request (PR) is a way to propose and discuss changes before they are merged. You push your branch to GitHub and then open a PR. This allows teammates to review your code, leave comments, and approve the changes before they are integrated into the main branch.</p>
+                    
+                    <h4 class="font-bold mt-4">Key Git Commands:</h4>
+                    <ul>
+                        <li><code>git clone [URL]</code>: Creates a local copy of a remote repository.</li>
+                        <li><code>git status</code>: Checks the current state of your repository (which files are modified, staged, etc.).</li>
+                        <li><code>git log</code>: Shows a history of all the commits in the current branch.</li>
+                        <li><code>git remote -v</code>: Lists all the remote repositories you have configured.</li>
+                    </ul>
+                </div>
+            </section>
+
+        <section
+          id="resources"
+          class="bg-white p-8 rounded-lg shadow-md scroll-mt-24 hidden"
+        >
+          <h2 class="text-3xl font-bold mb-6 border-b pb-4">
+            Helpful Resources
+          </h2>
+          <p class="mb-6">
+            The web development community is vast and supportive. Here are some
+            of the best places to learn, find answers, and stay up-to-date.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-4 border rounded-lg">
+              <h4 class="font-bold text-lg text-indigo-600">MDN Web Docs</h4>
+              <p>
+                The ultimate resource for web standards and documentation for
+                HTML, CSS, and JavaScript. Maintained by Mozilla.
+              </p>
+              <a
+                href="https://developer.mozilla.org/"
+                target="_blank"
+                class="text-blue-500 hover:underline"
+                >Visit MDN →</a
+              >
+            </div>
+            <div class="p-4 border rounded-lg">
+              <h4 class="font-bold text-lg text-indigo-600">freeCodeCamp</h4>
+              <p>
+                An interactive learning platform with a full curriculum on web
+                development, completely free.
+              </p>
+              <a
+                href="https://www.freecodecamp.org/"
+                target="_blank"
+                class="text-blue-500 hover:underline"
+                >Start Learning with freeCodeCamp →</a
+              >
+            </div>
+            <div class="p-4 border rounded-lg">
+              <h4 class="font-bold text-lg text-indigo-600">W3Schools</h4>
+              <p>
+                Great for beginners with simple explanations and "try it
+                yourself" examples for all web technologies.
+              </p>
+              <a
+                href="https://www.w3schools.com/"
+                target="_blank"
+                class="text-blue-500 hover:underline"
+                >Visit W3Schools →</a
+              >
+            </div>
+            <div class="p-4 border rounded-lg">
+              <h4 class="font-bold text-lg text-indigo-600">CSS-Tricks</h4>
+              <p>
+                A comprehensive site with articles, guides, and almanacs on
+                everything related to CSS.
+              </p>
+              <a
+                href="https://css-tricks.com/"
+                target="_blank"
+                class="text-blue-500 hover:underline"
+                >Explore CSS-Tricks →</a
+              >
+            </div>
+            <div class="p-4 border rounded-lg">
+              <h4 class="font-bold text-lg text-indigo-600">GitHub Docs</h4>
+              <p>
+                The official documentation for learning how to use Git and
+                GitHub effectively.
+              </p>
+              <a
+                href="https://docs.github.com/"
+                target="_blank"
+                class="text-blue-500 hover:underline"
+                >Read the Github Docs →</a
+              >
+            </div>
+            <div class="p-4 border rounded-lg">
+              <h4 class="font-bold text-lg text-indigo-600">Stack Overflow</h4>
+              <p>
+                A massive community question-and-answer site for programmers. If
+                you have a problem, someone has likely solved it here.
+              </p>
+              <a
+                href="https://stackoverflow.com/"
+                target="_blank"
+                class="text-blue-500 hover:underline"
+                >Find Answers With Stack Overflow →</a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <footer>
-      <br/><br/>
-      <p>I can code!</p>
-      <h6>&copy; Copyright 2023 Karen Bourgeois</h6>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-20">
+      <div class="container mx-auto px-6 py-8 text-center">
+        <p>&copy; 2025 Karen Bourgeois. All Rights Reserved.</p>
+        <p class="text-sm text-gray-400 mt-2">
+          Updated and redesigned for professional use.
+        </p>
+      </div>
     </footer>
 
-    <script src="./assets/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- Mobile Menu Logic ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
 
+        // --- Section Toggling Logic ---
+        const allLinks = document.querySelectorAll('a[href^="#"]');
+        const topicSections = document.querySelectorAll(
+          "#html, #css, #javascript, #git, #resources"
+        );
+
+        const showSection = (targetId) => {
+          // Hide all topic sections first
+          topicSections.forEach((section) => {
+            section.classList.add("hidden");
+          });
+
+          if (targetId === "#home" || targetId === "#") {
+            // If home, just make sure others are hidden and scroll to top
+            document
+              .getElementById("home")
+              .scrollIntoView({ behavior: "smooth" });
+            return;
+          }
+
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            targetSection.classList.remove("hidden");
+            // Timeout helps ensure the element is visible before scrolling begins
+            setTimeout(() => {
+              targetSection.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+          }
+        };
+
+        allLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            // Find external links in resources and allow default behavior
+            if (this.getAttribute("target") === "_blank") {
+              return;
+            }
+
+            e.preventDefault(); // Prevent default jump for all internal anchor links
+            const targetId = this.getAttribute("href");
+            showSection(targetId);
+
+            // Close mobile menu if it's open
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          });
+        });
+
+        console.log("✨ Welcome to the DevGuide! Happy coding! ✨");
+      });
+    </script>
   </body>
-
 </html>
