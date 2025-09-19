@@ -2,6 +2,12 @@
 
 ## Description
 
+### Please Note
+
+This repository has been updated to look more modern and include more information
+
+### About
+
 This Prework Study Guide was created for bootcamp students who were going through the Prework before starting actual classes. It contains my notes on HTML, CSS, Advanced CSS, Git, and JavaScript.
 
 User Story
@@ -26,6 +32,9 @@ There is no installation required as this is a static website.
   ![ScreenShot of the wwebsite at full screeen.](./assets/lrgscreensite.png)
   ![ScreenShot of the website at tablet size.](./assets/medscreenshot.png)
   ![ScreenShot of the website at phone size](./assets/smlscreenshot.png)
+  ![ScreenShot of the website at full screen](./assets/lrgscreenNew.png)
+  ![ScreenShot of the website at tablet size](./assets/mediumscreenNew.png)
+  ![ScreenShot of the website at mobile size](./assets/mobilescreenNew.png)
 
 ## Usage
 
